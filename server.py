@@ -12,9 +12,7 @@ def hello_world(name: str):
 
 @application.route("/personal-info/<name>")
 def personal_info(name: str):
-    info: Dict = {"first_name": "{}".format(name),
-                  "last_name": "yaroslavski",
-                  "email": "lina@mail.com"}
+    info: Dict = {"name": "{}".format(name)}
 
     resp = jsonify(info)
     return resp
