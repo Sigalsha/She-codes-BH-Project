@@ -27,6 +27,7 @@ import { GrandfatherComponent } from "./family/grandfather/grandfather.component
 import { FatherSideComponent } from "./family/father-side/father-side.component";
 /* import { FamilyFormComponent } from './family/family-form/family-form.component'; */
 import { FileUploadValidator } from "./shared/file-upload/file-upload-validators";
+import { GenericRadioButtonComponent } from './shared/generic-radio-button/generic-radio-button.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FileUploadValidator } from "./shared/file-upload/file-upload-validators
     MotherSideComponent,
     GrandfatherComponent,
     FatherSideComponent,
-    FileUploadValidator
+    FileUploadValidator,
+    GenericRadioButtonComponent
     /* FamilyFormComponent  */
   ],
   imports: [

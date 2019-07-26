@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: "app-mother-side",
-  templateUrl: "./mother-side.component.html",
-  styleUrls: ["./mother-side.component.scss"]
+  selector: 'app-mother-side',
+  templateUrl: './mother-side.component.html',
+  styleUrls: ['./mother-side.component.scss']
 })
 export class MotherSideComponent implements OnInit {
-  @ViewChild("motherSideForm", { static: false }) motherSideForm: NgForm;
-  motherSideFormHeader = "הצד של אמא 2/4";
+  @ViewChild('motherSideForm', { static: false }) motherSideForm: NgForm;
+  motherSideFormHeader = 'הצד של אמא 2/4';
 
-  formTxt = "המשיכו";
+  formTxt = 'המשיכו';
 
   constructor() {}
 

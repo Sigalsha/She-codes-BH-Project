@@ -12,9 +12,9 @@ import { FileUploadService } from "./file-upload.service";
 })
 export class FileUploadComponent implements OnInit {
   uploadBtnTxt = "הוסיפו תמונה";
-  @Input() imageTitle: string = "";
+  @Input() imageTitle = "";
   @Input() url = "";
-  @Input() fileError: boolean = false;
+  @Input() fileError = false;
 
   constructor(
     private http: HttpClient,
@@ -39,7 +39,6 @@ export class FileUploadComponent implements OnInit {
       reader.readAsDataURL(file);
       reader.onload = (event: any) => {
         this.url = event.target.result;
-        console.log(this.url);
       };
       this.uploadBtnTxt = "שנו תמונה";
       this.fileUploadService.uploadImage(file);

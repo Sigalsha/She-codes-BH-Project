@@ -1,5 +1,8 @@
 <div ngModelGroup="grandmother">
-  <div id="image-container">
+    <app-file-upload
+    imageTitle="אמא של אמא:"
+  ></app-file-upload>
+<!--   <div id="image-container">
     <img
       *ngIf="url !== ''"
       class="uploaded-image"
@@ -29,7 +32,7 @@
         {{ uploadBtnTxt }}
       </button>
     </div>
-  </div>
+  </div> -->
   <div id="inputs-container">
     <app-generic-input
       placeholder="שם פרטי"

@@ -1,0 +1,39 @@
+@import "../../../scss/vars";
+@import "../../../scss/styles.scss";
+
+* {
+  @extend %box;
+  font-size: font-size(size22);
+  background-color: background-color(Alabaster);
+  color: color(Cape-Cod);
+}
+
+#gender-wrapper {
+  @extend %gender-wrapper;
+}
+
+#gender-title {
+  @extend %gender-title;
+}
+
+#gender-info {
+  @extend %gender-info;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#gender-icon {
+  background-color: color(Nobel);
+  border-radius: 50%;
+  padding: 5px 8px;
+  width: 24px;
+  height: 24px;
+}
+
+.active {
+  background-color: color(Pelorous);
+}

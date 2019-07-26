@@ -1,0 +1,15 @@
+<div id="gender-wrapper">
+  <span id="gender-title">מין</span>
+  <p id="gender-info">
+    בחרו:
+    <span *ngFor="let gender of genders">
+      <input type="radio" name="gender" ngModel [value]="gender" required />
+
+      <img
+        id="gender-icon"
+        src="../../../assets/images/{{ gender }}.svg"
+        alt="gender"
+      />
+    </span>
+  </p>
+</div>
