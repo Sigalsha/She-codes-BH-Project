@@ -1,0 +1,13 @@
+@import "../../../scss/vars";
+@import "../../../scss/styles.scss";
+
+* {
+  @extend %box;
+  font-size: font-size(size22);
+  background-color: background-color(Alabaster);
+  color: color(Cape-Cod);
+}
+
+#form-btn {
+  @extend %form-btn;
+}

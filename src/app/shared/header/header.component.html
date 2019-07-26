@@ -1,0 +1,20 @@
+<header id="header-container">
+  <div class="header-info-wrapper">
+    <h1
+      class="header-title"
+      [ngStyle]="{ color: beforeVerification ? '#38b9c9' : '#666666' }"
+    >
+      {{ headerContent }}
+    </h1>
+    <p>
+      <img
+        id="header-logo"
+        src="../../../assets/images/logo-bg-he.svg"
+        alt="beit-hatfutzot-logo"
+      />
+    </p>
+
+    <!--     <p id="header-logo">מוזיאון העם היהודי בבית התפוצות + לוגו מובנה</p> -->
+  </div>
+  <hr *ngIf="beforeVerification" class="header-divider" />
+</header>

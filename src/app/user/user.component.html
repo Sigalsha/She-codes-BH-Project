@@ -1,0 +1,91 @@
+<app-header
+  [headerContent]="userDetailsHeader"
+  [beforeVerification]="false"
+></app-header>
+<app-navbar
+  [beforeSubmitUserDetails]="!userDetailsForm.valid ? true : false"
+></app-navbar>
+<form (ngSubmit)="onSubmitUserDetailsForm()" #userDetailsForm="ngForm">
+  <div id="image-container">
+    <div id="image-input-wrapper">
+      <p id="image-title">אני:</p>
+      <button class="image-btn">הוסיפו תמונה</button>
+    </div>
+  </div>
+  <div id="inputs-container">
+    <app-generic-input
+      placeholder="שם פרטי"
+      pattern="^[a-zA-Z\-\u0590-\u05FF ]+$"
+      [isRequired]="true"
+      [errorMsg]="'אנא מלאו שם פרטי'"
+      label="שם פרטי"
+      ngModel
+      name="first-name"
+    ></app-generic-input>
+
+    <app-generic-input
+      placeholder="שם משפחה"
+      pattern="^[a-zA-Z\-\u0590-\u05FF ]+$"
+      [isRequired]="true"
+      errorMsg="אנא מלאו שם משפחה"
+      label="שם משפחה"
+      ngModel
+      name="last-name"
+    ></app-generic-input>
+    <div id="gender-wrapper">
+      <span id="gender-title">מין</span>
+      <p id="gender-info">
+        בחרו:
+        <span *ngFor="let gender of genders">
+          <input type="radio" name="gender" ngModel [value]="gender" required />
+          {{ gender }}
+        </span>
+        <!-- <span>
+          <fa-icon
+            [icon]="faMale"
+            [ngStyle]="{
+              backgroundColor: maleClicked ? '#37b9c9' : '#b3b2b2'
+            }"
+            (click)="onClickGender('male')"
+          >
+            <input type="radio" name="male" ngModel />
+          </fa-icon>
+          <fa-icon
+            [icon]="faFemale"
+            [ngStyle]="{
+              backgroundColor: femaleClicked ? '#37b9c9' : '#b3b2b2'
+            }"
+            (click)="onClickGender('female')"
+          >
+            <input type="radio" name="female" ngModel />
+          </fa-icon>
+        </span> -->
+      </p>
+    </div>
+    <app-generic-input
+      placeholder="שנה או תאריך מלא"
+      [pattern]="datePattern"
+      [isRequired]="true"
+      errorMsg="אנא מלאו שנה או תאריך מלא (1948 או 1/1/1948)"
+      label="תאריך לידה"
+      ngModel
+      name="birth-date"
+    ></app-generic-input>
+    <app-generic-input
+      placeholder="עיר ו/או מדינה"
+      pattern="^[a-zA-Z\-\u0590-\u05FF ]+$"
+      [isRequired]="true"
+      errorMsg="אנא מלאו מקום לידה"
+      label="מקום לידה"
+      ngModel
+      name="birth-place"
+    ></app-generic-input>
+  </div>
+</form>
+<section id="form-btn">
+  <app-button
+    [buttonText]="formTxt"
+    [disabledCondition]="!userDetailsForm.valid"
+    (clicked)="onSubmitUserDetailsForm()"
+  ></app-button>
+</section>

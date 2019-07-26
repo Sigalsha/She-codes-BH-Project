@@ -1,0 +1,79 @@
+@import "../../scss/vars";
+@import "../../scss/styles.scss";
+
+* {
+  @extend %box;
+}
+
+.home-container {
+  @extend %flex;
+  flex-direction: column;
+  height: map-get($map: $heights, $key: pr);
+}
+
+#home-header {
+  flex: flex-size(19);
+  @extend %flex-column;
+}
+
+#home-header-logo {
+  flex: flex-size(20);
+}
+
+.home-divider {
+  flex: 1.2;
+  margin: margin(reset);
+  background-color: background-color(Pelorous);
+}
+
+.home-content {
+  padding: 5%;
+  flex: flex-size(80);
+  background-image: linear-gradient(147deg, #ff9d1f, #ffbf80);
+  @extend %text-center;
+  font-size: font-size(size24);
+}
+
+.home-content-up {
+  color: color(White);
+  padding: 5vh 0 0 0;
+}
+
+h3 {
+  margin: margin(reset);
+  @extend %padding-reset;
+  line-height: line-h(0.5);
+  font-size: font-size(size28);
+  font-weight: font-weight(weight400);
+}
+
+h1 {
+  margin: margin(reset);
+  @extend %padding-reset;
+  font-size: font-size(size34);
+  letter-spacing: 0.05em;
+}
+
+h1::first-letter {
+  font-weight: font-weight(weight300);
+}
+
+h4 {
+  font-size: font-size(size24);
+  margin: margin(reset);
+  line-height: line-h(1);
+  font-weight: font-weight(weight400);
+}
+
+.home-purpose {
+  color: color(Black);
+}
+
+.home-content-down {
+  padding-top: 50%;
+}
+
+.home-info {
+  font-size: font-size(size24);
+  font-weight: font-weight(weight400);
+}

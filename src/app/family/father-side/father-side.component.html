@@ -1,0 +1,24 @@
+<app-header
+  [headerContent]="fatherSideFormHeader"
+  [beforeVerification]="false"
+></app-header>
+
+<app-navbar
+  [beforeSubmitUserDetails]="!fatherSideForm.valid ? true : false"
+></app-navbar>
+
+<form (ngSubmit)="onSubmitFatherSideForm()" #fatherSideForm="ngForm">
+  <app-father></app-father>
+  <app-grandmother></app-grandmother>
+  <app-grandfather></app-grandfather>
+</form>
+<pre>
+    {{ fatherSideForm.value | json }}
+</pre>
+<section id="form-btn">
+  <app-button
+    [buttonText]="formTxt"
+    [disabledCondition]="!fatherSideForm.valid"
+    (clicked)="onSubmitFatherSideForm()"
+  ></app-button>
+</section>

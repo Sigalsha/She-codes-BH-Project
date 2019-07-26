@@ -1,0 +1,74 @@
+$background-lightgrey: #f9f9f9;
+
+$family-primary: "Assistant", sans-serif;
+
+$heights: (
+  pr: 100%,
+  100: 100vh,
+  20: 20vh,
+  24: 24px,
+  0.2: 0.2vh
+);
+
+$colors: (
+  Alabaster: #f9f9f9,
+  Pelorous: #37b9c9,
+  Transparent: transparent,
+  Nobel: #b3b2b2,
+  White: #ffffff,
+  White-Opacity: rgba(253, 253, 253, 0.8),
+  Black: black,
+  Tree-Poppy: #ff9d1e,
+  Cape-Cod: #535454,
+  Gray: #868686,
+  Thunderbird: #b01c12
+);
+
+$font-weights: (
+  weight300: 300,
+  weight400: 400,
+  weight600: 600
+);
+
+$font-sizes: (
+  size11: 11px,
+  size12: 12px,
+  size18: 18px,
+  size20: 20px,
+  size22: 22px,
+  size24: 24px,
+  size26: 26px,
+  size28: 28px,
+  size30: 30px,
+  size34: 34px,
+  size40: 40px,
+  size62: 62px,
+  size100: 100px,
+  size110: 110px
+);
+
+$line-heights: (
+  0: 0,
+  0.5: 0.5,
+  1: 1,
+  1.5: 1.5,
+  2: 2
+);
+
+$margin-sizes: (
+  reset: 0,
+  all-20: 20px,
+  half-20: 0 20px,
+  each-10: 10vh 10px,
+  30-20: 30px 20px 20px 20px,
+  40-10: 40px 10px 0 10px
+);
+
+$flex-sizes: (
+  1: 1,
+  2: 2,
+  3: 3,
+  19: 19,
+  20: 20,
+  80: 80
+);

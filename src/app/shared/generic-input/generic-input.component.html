@@ -1,0 +1,59 @@
+<p class="input-wrapper">
+  {{ label }}
+  <input
+    [type]="type"
+    #input
+    (input)="onChange($event.target.value)"
+    (blur)="onTouched()"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
+    [pattern]="pattern"
+  />
+  <span
+    id="input-check"
+    *ngIf="isRequired && controlDir && controlDir.control.touched"
+  >
+    <!--     <fa-icon
+      *ngIf="
+        (isRequired &&
+          controlDir &&
+          controlDir.control.valid &&
+          controlDir.control.touched) ||
+        (!isRequired && input.value.length > 0)
+      "
+      [icon]="faCheck"
+      id="valid-icon"
+    ></fa-icon> -->
+
+    <img
+      *ngIf="
+        (isRequired &&
+          controlDir &&
+          controlDir.control.valid &&
+          controlDir.control.touched) ||
+        (!isRequired && input.value.length > 0)
+      "
+      src="../../../assets/images/v.svg"
+      id="valid-icon"
+      alt="valid-icon"
+    />
+    <img
+      *ngIf="
+        (isRequired &&
+          controlDir &&
+          !controlDir.control.valid &&
+          controlDir.control.touched) ||
+        (!isRequired && input.value.length === 0)
+      "
+      src="../../../assets/images/x.svg"
+      id="invalid-icon"
+      alt="error-icon"
+    />
+  </span>
+</p>
+<div
+  class="error"
+  *ngIf="controlDir && !controlDir.control.valid && controlDir.control.touched"
+>
+  {{ errorMsg }}
+</div>

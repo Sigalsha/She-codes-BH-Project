@@ -1,0 +1,58 @@
+@import "../../scss/vars";
+@import "../../scss/styles.scss";
+
+* {
+  @extend %box;
+  font-size: font-size(size22);
+  background-color: background-color(Alabaster);
+  color: color(Cape-Cod);
+}
+
+#image-container {
+  @extend %image-container;
+}
+
+#image-input-wrapper {
+  @extend %image-input-wrapper;
+}
+
+#image-title {
+  @extend %image-title;
+}
+
+.image-btn {
+  @extend %image-btn;
+}
+
+#inputs-container {
+  @extend %inputs-container;
+}
+
+.input-wrapper {
+  @extend %input-wrapper;
+}
+
+#gender-wrapper {
+  @extend %gender-wrapper;
+}
+
+#gender-title {
+  @extend %gender-title;
+}
+
+#gender-info {
+  @extend %gender-info;
+}
+
+/* fa-icon {
+  color: color(White);
+  border-radius: 50%;
+  font-size: font-size(size24);
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: color(Nobel);
+} */
+
+#form-btn {
+  @extend %form-btn;
+}

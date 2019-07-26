@@ -1,0 +1,34 @@
+<!-- <div ngModelGroup="image"> -->
+<div id="image-container">
+  <img
+    *ngIf="url !== ''"
+    class="uploaded-image"
+    [src]="url"
+    alt="uploaded-image"
+  />
+  <div
+    [ngClass]="url === '' ? 'image-input-wrapper' : 'image-input-wrapper-after'"
+  >
+    <p id="image-title">{{ imageTitle }}</p>
+    <input
+      #fileInput
+      type="file"
+      class="file-input"
+      value="הוסיפו תמונה"
+      (change)="onUploadFile($event)"
+      fileUploadValidator
+    />
+    <button
+      type="button"
+      [ngClass]="url === '' ? 'upload-button' : 'upload-button-after'"
+      (click)="fileInput.click()"
+      #fileButton
+    >
+      {{ uploadBtnTxt }}
+    </button>
+  </div>
+</div>
+<div class="error" *ngIf="fileError">
+  "אנא בחרו קובץ תמונה בלבד"
+</div>
+<!-- </div> -->

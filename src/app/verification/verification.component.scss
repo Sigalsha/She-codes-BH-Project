@@ -1,0 +1,90 @@
+@import "../../scss/vars";
+@import "../../scss/styles.scss";
+
+* {
+  color: color(Cape-Cod);
+  font-size: font-size(size22);
+  box-sizing: border-box;
+  background-color: background-color(Alabaster);
+}
+
+.verification-container {
+  margin: margin(30-20);
+}
+
+#verification-title {
+  font-weight: font-weight(400);
+  font-size: font-size(size26);
+  line-height: line-h(1);
+}
+
+.verification-input-wrapper {
+  border-bottom: 1px solid #535454;
+  @extend %flex;
+  @extend %justify-between;
+}
+
+/* not working */
+input .ng-valid .ng-touched {
+  border: 1px solid red;
+}
+
+input {
+  border: none;
+}
+
+input::placeholder {
+  text-align: left;
+  font-family: "Assistant", sans-serif;
+}
+
+.verification-warning {
+  color: color(Thunderbird);
+  @extend %m-left-5;
+  padding: 5px 0;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+#verification-bottom {
+  margin-top: 35vh;
+  @extend %text-center;
+}
+
+#verification-code {
+  margin-top: 20%;
+}
+
+#verification-code-notice {
+  @extend %text-right;
+  font-size: font-size(size20);
+  @extend %m-left-20;
+  line-height: line-h(1.5);
+}
+
+#verification-code-title {
+  color: color(Tree-Poppy);
+}
+
+input {
+  border: none;
+}
+
+input::placeholder {
+  @extend %text-left;
+  font-family: $family-primary;
+}
+
+.verification-code-warning {
+  color: color(Thunderbird);
+  @extend %m-left-5;
+  font-size: font-size(size18);
+}
+
+#verification-code-guide {
+  font-size: font-size(size18);
+  @extend %text-center;
+}

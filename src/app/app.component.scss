@@ -1,0 +1,18 @@
+@import "../scss/_vars.scss";
+@import "../scss/styles.scss";
+
+* {
+  @extend %box;
+  background-color: background-color(Alabaster);
+}
+
+.container {
+  font-family: $family-primary;
+  height: height(100);
+}
+
+@media (min-width: 800px) {
+  .container {
+    width: 60%;
+  }
+}

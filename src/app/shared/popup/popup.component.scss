@@ -1,0 +1,43 @@
+@import "../../../scss/vars";
+@import "../../../scss/styles";
+
+* {
+  font-family: "Assistant", sans-serif;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: height(100);
+  background-color: color(White-Opacity);
+  z-index: 50;
+}
+
+.popup-container {
+  position: fixed;
+  color: #fe9d1d;
+  top: 6vh;
+  margin-right: 20px;
+  z-index: 100;
+  background-color: color(White-Opacity);
+  @extend %flex-row;
+}
+
+#popup-main {
+  font-size: font-size(size100);
+  letter-spacing: 3px;
+  line-height: line-h(1);
+}
+
+#popup-main::first-line {
+  font-size: font-size(size110);
+}
+
+#popup-sub {
+  font-size: font-size(size62);
+  @extend %padding-reset;
+  margin: margin(reset);
+  @extend %line-0;
+}

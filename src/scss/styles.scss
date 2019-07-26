@@ -1,0 +1,168 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./vars";
+
+@function font-weight($weight-number) {
+  @return map-get($map: $font-weights, $key: $weight-number);
+}
+
+@function font-size($size-px) {
+  @return map-get($map: $font-sizes, $key: $size-px);
+}
+
+@function color($color-name) {
+  @return map-get($map: $colors, $key: $color-name);
+}
+
+@function height($height) {
+  @return map-get($map: $heights, $key: $height);
+}
+
+@function margin($margin-size) {
+  @return map-get($map: $margin-sizes, $key: $margin-size);
+}
+
+@function line-h($l-height) {
+  @return map-get($map: $line-heights, $key: $l-height);
+}
+
+@function flex-size($flex-number) {
+  @return map-get($map: $flex-sizes, $key: $flex-number);
+}
+
+%box {
+  box-sizing: border-box;
+}
+
+%flex {
+  display: flex;
+}
+
+%flex-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+%flex-column {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+%flex-items-center {
+  align-items: center;
+}
+
+%justify-between {
+  justify-content: space-between;
+}
+
+%m-left-5 {
+  margin-left: 5px;
+}
+
+%m-left-20 {
+  margin-left: 20px;
+}
+
+%text-center {
+  text-align: center;
+}
+
+%text-left {
+  text-align: left;
+}
+
+%text-right {
+  text-align: right;
+}
+
+%line-0 {
+  line-height: line-h(0);
+}
+
+%padding-reset {
+  padding: 0;
+}
+
+%input-wrapper {
+  border-bottom: 1px solid #535454;
+  @extend %flex;
+  @extend %justify-between;
+}
+
+%image-container {
+  height: height(20);
+  display: flex;
+  border-bottom: 1px solid #535454;
+}
+
+%image-input-wrapper {
+  flex: flex-size(1);
+  margin: margin(half-20);
+  @extend %flex;
+  @extend %justify-between;
+  align-items: flex-end;
+  @extend %line-0;
+}
+
+%image-title {
+  font-size: font-size(size26);
+}
+
+%image-btn {
+  background-color: color(Transparent);
+  color: color(Gray);
+  border: none;
+  font-family: "Assistant", sans-serif;
+  text-decoration: underline;
+  line-height: lin-h(2);
+}
+
+%inputs-container {
+  margin: margin(all-20);
+}
+
+%input-wrapper {
+  border-bottom: 1px solid #535454;
+  @extend %flex;
+  @extend %justify-between;
+}
+
+%gender-wrapper {
+  @extend %flex-row;
+  @extend %flex-items-center;
+  @extend %padding-reset;
+  line-height: line-h(1);
+  border-bottom: 1px solid #535454;
+}
+
+%gender-title {
+  flex: 0.5;
+}
+
+%gender-info {
+  color: color(Gray);
+  flex: flex-size(1);
+  @extend %flex-row;
+  @extend %flex-items-center;
+  @extend %justify-between;
+}
+
+%form-btn {
+  margin: margin(each-10);
+}
+
+body {
+  margin: margin(reset);
+}
+
+input {
+  border: none;
+  color: color(Gray);
+}
+
+input::placeholder {
+  text-align: left;
+  font-family: "Assistant", sans-serif;
+  color: color(Gray);
+}

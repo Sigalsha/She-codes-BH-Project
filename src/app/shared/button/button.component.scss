@@ -1,0 +1,32 @@
+@import "../../../scss/vars";
+@import "../../../scss/styles.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.btn {
+  height: 64px;
+  width: 96%;
+  margin: margin(40-10);
+  color: color(white);
+  font-size: font-size(size40);
+  font-family: "Assistant", sans-serif;
+  border-radius: 8px;
+  border: none;
+  background-image: linear-gradient(263deg, #37b9c9, #238f9c);
+  box-shadow: 0 3px rgba(0, 0, 0, 0.16);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-image: none;
+  background-color: color(Nobel);
+}
+
+.btn:disabled:hover {
+  cursor: not-allowed;
+}

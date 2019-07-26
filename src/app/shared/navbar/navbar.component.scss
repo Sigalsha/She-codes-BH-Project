@@ -1,0 +1,21 @@
+@import "../../../scss/vars";
+@import "../../../scss/styles.scss";
+
+* {
+  @extend %box;
+}
+
+#nav-container {
+  background-color: color(Nobel);
+  @extend %flex-row;
+  @extend %flex-items-center;
+}
+
+.nav-item {
+  flex: flex-size(1);
+  color: white;
+  font-size: font-size(size20);
+  font-weight: font-weight(weight600);
+  border: 1px solid white;
+  @extend %text-center;
+}

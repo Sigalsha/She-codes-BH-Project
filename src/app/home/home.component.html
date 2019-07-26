@@ -1,0 +1,26 @@
+<div class="home-container">
+  <header id="home-header">
+    <p id="home-header-logo">מוזיאון העם היהודי בבית התפוצות + לוגו מובנה</p>
+    <hr class="home-divider" />
+  </header>
+  <div class="home-content">
+    <section class="home-content-up">
+      <h3>ברוכים הבאים</h3>
+      <h1>לפרויקט עצי המשפחה</h1>
+      <h4>של מוזיאון העם היהודי בבית התפוצות.</h4>
+      <p class="home-purpose">
+        כאן תוכלו ליצור את עץ המשפחה שלכם ב-4 צעדים פשוטים.
+      </p>
+    </section>
+    <section class="home-content-down">
+      <div class="home-info">
+        העץ שתבנו יישמר במאגר עצי המשפחה המאובטח של בית התפוצות ותוכלו לעיין בו
+        ולערוך אותו בעתיד באתר בית התפוצות.
+      </div>
+      <app-button
+        [buttonText]="homeBtnTxt"
+        (clicked)="onClickEnter()"
+      ></app-button>
+    </section>
+  </div>
+</div>

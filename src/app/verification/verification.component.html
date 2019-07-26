@@ -1,0 +1,117 @@
+<app-header
+  [headerContent]="registrationHeader"
+  [beforeVerification]="true"
+></app-header>
+<div class="verification-container">
+  <header id="verification-title">
+    פרטי רישום
+  </header>
+  <form (ngSubmit)="onSubmitRegistrationForm()" #registrationForm="ngForm">
+    <p class="verification-input-wrapper">
+      דואר אלקטרוני
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="הזינו מייל"
+        ngModel
+        email
+        required
+        #email="ngModel"
+      />
+    </p>
+    <div *ngIf="!email.valid && email.touched" class="verification-warning">
+      אנא מלאו כתובת דוא"ל תקינה
+    </div>
+    <p class="verification-input-wrapper">
+      טלפון סלולרי<input
+        type="number"
+        name="phone"
+        id="phone"
+        placeholder="הזינו מספר"
+        number
+        ngModel
+        minlength="10"
+        required
+        #phone="ngModel"
+      />
+    </p>
+    <div *ngIf="!phone.valid && phone.touched" class="verification-warning">
+      אנא מלאו מספר טלפון תקין
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        name="agreement"
+        [value]="agreement"
+        id="verification-agreement"
+        ngModel
+        required
+      />קראתי ואני מסכים/ה ל <a href="www.google.com">תנאי השימוש</a>
+    </div>
+  </form>
+  <div
+    *ngIf="!registrationForm.valid && registrationForm.touched"
+    class="verification-warning"
+  >
+    אנא ודאו כי הזנתם את כל הפרטים בצורה תקינה
+  </div>
+
+  <form
+    *ngIf="registrationFormSubmitted"
+    id="verification-code"
+    #verificationCodeForm="ngForm"
+    (ngSubmit)="onSubmitVerificationCodeForm()"
+  >
+    <p id="verification-code-notice">
+      בדקו את תיבת הדואר. בדקות הקרובות תתקבל הודעה ובה קוד האימות, יש להעתיק את
+      הקוד לכאן:
+    </p>
+    <p class="verification-input-wrapper">
+      <span id="verification-code-title">קוד אימות</span>
+      <input
+        type="nubmer"
+        name="verificationCode"
+        id="verificationCode"
+        number
+        placeholder="הזינו קוד"
+        ngModel
+        minlength="5"
+        maxlength="5"
+        required
+        #verificationCode="ngModel"
+      />
+    </p>
+    <div
+      *ngIf="!verificationCode.valid && verificationCode.touched"
+      class="verification-code-warning"
+    >
+      להוסיף אזהרה/הודעת שגיאה על קוד האימות
+    </div>
+    <p id="verification-code-guide">
+      במידה ולא התקבלה הודעה, בדקו את תיבת דואר הזבל
+    </p>
+  </form>
+  <section id="verification-bottom">
+    <p>לא לדאוג, לא נשלח הודעות ספאם!</p>
+    <app-button
+      *ngIf="!registrationFormSubmitted"
+      [buttonText]="registerBtnTxt"
+      [disabledCondition]="!registrationForm.valid"
+      (clicked)="onSubmitRegistrationForm()"
+    ></app-button>
+    <app-button
+      *ngIf="registrationFormSubmitted"
+      [buttonText]="verificateBtnTxt"
+      [disabledCondition]="!verificationCode.valid"
+      (clicked)="onSubmitVerificationCodeForm()"
+    ></app-button>
+  </section>
+</div>
+
+<!--   <app-popup
+    [primaryContent]="primaryText"
+    [secondaryContent]="secondaryText"
+    *ngIf="formSubmitted"
+    (fadeOut)="onHandleFormSubmitted()"
+  ></app-popup> -->

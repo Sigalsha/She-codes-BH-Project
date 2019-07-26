@@ -1,0 +1,59 @@
+@import "../../../scss/vars";
+@import "../../../scss/styles";
+
+* {
+  @extend %box;
+  font-size: font-size(size22);
+  background-color: background-color(Alabaster);
+  color: color(Cape-Cod);
+}
+
+.input-wrapper {
+  border-bottom: 1px solid #535454;
+  @extend %flex;
+  @extend %justify-between;
+
+  input {
+    border: none;
+    color: color(Gray);
+  }
+
+  input::placeholder {
+    @extend %text-left;
+    font-family: "Assistant", sans-serif;
+    color: color(Gray);
+  }
+
+  #input-check {
+    margin-bottom: 5px;
+  }
+
+  fa-icon {
+    color: color(White);
+    border-radius: 50%;
+    font-size: font-size(size11);
+    padding: 5px 8px;
+  }
+
+  img {
+    color: color(White);
+    border-radius: 50%;
+    padding: 5px;
+    height: height(24);
+    width: 24px;
+  }
+
+  #valid-icon {
+    background-color: color(Pelorous);
+  }
+
+  #invalid-icon {
+    background-color: color(Thunderbird);
+  }
+}
+
+.error {
+  color: color(Thunderbird);
+  @extend %m-left-5;
+  padding: 5px 0;
+}

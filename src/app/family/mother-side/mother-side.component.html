@@ -1,0 +1,24 @@
+<app-header
+  [headerContent]="motherSideFormHeader"
+  [beforeVerification]="false"
+></app-header>
+
+<app-navbar
+  [beforeSubmitUserDetails]="!motherSideForm.valid ? true : false"
+></app-navbar>
+
+<form (ngSubmit)="onSubmitMotherSideForm()" #motherSideForm="ngForm">
+  <app-mother></app-mother>
+  <app-grandmother innerFormTitle="אמא של אמא:"></app-grandmother>
+  <app-grandfather innerFormTitle="אבא של אמא:"></app-grandfather>
+</form>
+<pre>
+    {{ motherSideForm.value | json }}
+</pre>
+<section id="form-btn">
+  <app-button
+    [buttonText]="formTxt"
+    [disabledCondition]="!motherSideForm.valid"
+    (clicked)="onSubmitMotherSideForm()"
+  ></app-button>
+</section>

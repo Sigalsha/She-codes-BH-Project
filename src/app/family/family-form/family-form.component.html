@@ -1,0 +1,104 @@
+<ng-container [formGroup]="familyForm">
+  <div id="image-container">
+    <div id="image-input-wrapper">
+      <p id="image-title">אמא:</p>
+      <button class="image-btn">הוסיפו תמונה</button>
+    </div>
+  </div>
+  <div id="inputs-container">
+    <!--    <app-generic-input
+      placeholder="שם פרטי"
+      pattern="^[a-zA-Z\-\u0590-\u05FF ]+$"
+      [isRequired]="true"
+      [errorMsg]="'אנא מלאו שם פרטי'"
+      label="שם פרטי"
+      ngModel
+      name="firstName"
+      formControlName="firstName"
+    ></app-generic-input>
+
+    <app-generic-input
+      placeholder="שם משפחה"
+      pattern="^[a-zA-Z\-\u0590-\u05FF ]+$"
+      [isRequired]="true"
+      errorMsg="אנא מלאו שם משפחה"
+      label="שם משפחה"
+      ngModel
+      name="lastName"
+      formControlName="lastName"
+    ></app-generic-input>
+    <app-generic-input
+      placeholder="שם נעורים"
+      pattern="^[a-zA-Z\-\u0590-\u05FF ]+$"
+      [isRequired]="false"
+      errorMsg="אנא מלאו שם נעורים"
+      label="שם נעורים"
+      ngModel
+      name="youthName"
+      formControlName="youthName"
+    ></app-generic-input>
+    <div id="gender-wrapper">
+      <span id="gender-title">מין</span>
+      <p id="gender-info">
+        בחרו:
+        <span *ngFor="let gender of genders">
+          <input
+            type="radio"
+            name="gender"
+            ngModel
+            [value]="gender"
+            formControlName="gender"
+            required
+          />
+          {{ gender }}
+        </span>
+      </p>
+    </div>
+    <app-generic-input
+      placeholder="שנה או תאריך מלא"
+      [pattern]="datePattern"
+      [isRequired]="true"
+      errorMsg="אנא מלאו שנה או תאריך מלא (1948 או 1/1/1948)"
+      label="תאריך לידה"
+      ngModel
+      name="birthDate"
+      formControlName="birthDate"
+    ></app-generic-input>
+    <app-generic-input
+      placeholder="עיר ו/או מדינה"
+      pattern="^[a-zA-Z\-\u0590-\u05FF ]+$"
+      [isRequired]="true"
+      errorMsg="אנא מלאו מקום לידה"
+      label="מקום לידה"
+      ngModel
+      name="birthPlace"
+      formControlName="birthPlace"
+    ></app-generic-input>
+    <p>
+      <input type="checkbox" name="isAlive" [(ngModel)]="isAlive" formControlName="isAlive" />
+      <span>חי/חיה</span>
+    </p>
+    <app-generic-input
+      *ngIf="!isAlive"
+      placeholder="שנה או תאריך מלא"
+      [pattern]="datePattern"
+      [isRequired]="true"
+      errorMsg="אנא מלאו שנה או תאריך מלא (1948 או 1/1/1948)"
+      label="תאריך פטירה"
+      ngModel
+      name="deathDate"
+      formControlName="deathDate"
+    ></app-generic-input>
+    <app-generic-input
+      *ngIf="!isAlive"
+      placeholder="עיר ו/או מדינה"
+      pattern="^[a-zA-Z\-\u0590-\u05FF ]+$"
+      [isRequired]="true"
+      errorMsg="אנא מלאו מקום פטירה"
+      label="מקום פטירה"
+      ngModel
+      name="deathPlace"
+      formControlName="deathPlace"
+    ></app-generic-input> -->
+  </div>
+</ng-container>
