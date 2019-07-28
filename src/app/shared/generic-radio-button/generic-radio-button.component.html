@@ -17,10 +17,8 @@
           'male-icon': radioValue === 'male',
           'female-icon': radioValue === 'female'
         }"
-        [src]="
-          !radioValue ? '../../../assets/images/{gender}.svg' : chosenImagePath
-        "
-        alt="gender"
+        src="../../../assets/images/{{ gender }}.svg"
+        alt="{{ gender }}"
       />
     </span>
   </p>
