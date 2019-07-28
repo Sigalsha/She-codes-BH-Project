@@ -1,15 +1,33 @@
 <div id="gender-wrapper">
   <span id="gender-title">מין</span>
   <p id="gender-info">
-    בחרו:
+    {{ activeLabel }}
     <span *ngFor="let gender of genders">
-      <input type="radio" name="gender" ngModel [value]="gender" required />
+      <input
+        type="radio"
+        [value]="gender"
+        #radioInput
+        (click)="selectType(gender)"
+      />
 
       <img
-        id="gender-icon"
-        src="../../../assets/images/{{ gender }}.svg"
+        class="gender-icon"
+        [ngClass]="{
+          'gender-icon-color': radioValue === '',
+          'male-icon': radioValue === 'male',
+          'female-icon': radioValue === 'female'
+        }"
+        [src]="
+          !radioValue ? '../../../assets/images/{gender}.svg' : chosenImagePath
+        "
         alt="gender"
       />
     </span>
   </p>
+</div>
+<div
+  class="error"
+  *ngIf="controlDir && !controlDir.control.valid && controlDir.control.touched"
+>
+  {{ errorMsg }}
 </div>

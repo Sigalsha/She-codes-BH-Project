@@ -26,14 +26,29 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-#gender-icon {
-  background-color: color(Nobel);
+//  background-color: color(Pelorous);
+
+.gender-icon {
   border-radius: 50%;
   padding: 5px 8px;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 }
 
-.active {
+.gender-icon-color {
+  background-color: color(Nobel);
+}
+
+.male-icon {
   background-color: color(Pelorous);
+}
+
+.female-icon {
+  background-color: color(Thunderbird);
+}
+
+.error {
+  color: color(Thunderbird);
+  @extend %m-left-5;
+  padding: 5px 0;
 }

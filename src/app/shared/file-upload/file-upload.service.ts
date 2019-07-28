@@ -8,7 +8,7 @@ export class FileUploadService {
   uploadImage(image: File) {
     console.log(image);
     this.http
-      .post("http://fb307452.ngrok.io", image)
+      .post("https://she-codes-bh-project.herokuapp.com/resize-image/", image)
       .subscribe(responseData => {
         console.log(responseData);
       });

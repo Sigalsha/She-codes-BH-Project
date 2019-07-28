@@ -1,36 +1,68 @@
 import {
   Component,
-  forwardRef,
   OnInit,
-  ChangeDetectionStrategy
+  Input,
+  ViewChild,
+  ElementRef,
+  Self
 } from "@angular/core";
 
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
-
-const TYPE_CONTROL_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => GenericRadioButtonComponent),
-  multi: true
-};
+import {
+  ControlValueAccessor,
+  Validator,
+  AbstractControl,
+  ValidatorFn,
+  Validators,
+  NgControl
+} from "@angular/forms";
 
 @Component({
   selector: "app-generic-radio-button",
   templateUrl: "./generic-radio-button.component.html",
-  styleUrls: ["./generic-radio-button.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [TYPE_CONTROL_ACCESSOR]
+  styleUrls: ["./generic-radio-button.component.scss"]
 })
 export class GenericRadioButtonComponent
-  implements OnInit, ControlValueAccessor {
-  value = "male";
+  implements ControlValueAccessor, Validator, OnInit {
+  @ViewChild("radioInput", { static: false }) radioInput: ElementRef;
+  @Input() radioValue = "";
+  @Input() isRequired: boolean = false;
+  @Input() errorMsg: string;
+  activeLabel = "בחרו:";
   genders = ["male", "female"];
+  genericImagePath: string = "../../../assets/images/{{gender}}.svg";
+  chosenImagePath: string = "../../../assets/images/{{this.radioValue}}.svg";
   private onTouch: Function;
   private onModelChange: Function;
 
-  constructor() {}
+  constructor(@Self() public controlDir: NgControl) {
+    this.controlDir.valueAccessor = this;
+  }
+
+  ngOnInit() {
+    const { control } = this.controlDir;
+    const validators: ValidatorFn[] = control.validator
+      ? [control.validator]
+      : [];
+
+    if (this.isRequired) {
+      validators.push(Validators.required);
+    }
+
+    control.setValidators(validators);
+    control.updateValueAndValidity();
+  }
+
+  selectType(value: string) {
+    this.radioInput.nativeElement.value = value;
+    this.radioValue = value;
+    console.log(this.radioValue);
+    this.onModelChange(value);
+    this.onTouch();
+    this.activeLabel = "שינוי";
+  }
 
   writeValue(obj: string): void {
-    this.value = obj;
+    this.radioInput.nativeElement.checked = obj;
   }
 
   registerOnChange(fn: any): void {
@@ -41,11 +73,11 @@ export class GenericRadioButtonComponent
     this.onTouch = fn;
   }
 
-  selectType(value: string) {
-    this.value = value;
-    this.onModelChange(value);
-    this.onTouch();
+  validate(c: AbstractControl): { [key: string]: any } {
+    const validators: ValidatorFn[] = [];
+    if (this.isRequired) {
+      validators.push(Validators.required);
+    }
+    return validators;
   }
-
-  ngOnInit() {}
 }

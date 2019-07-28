@@ -1,7 +1,5 @@
 <div ngModelGroup="grandfather">
-  <app-file-upload
-    imageTitle="אבא של אמא:"
-  ></app-file-upload>
+  <app-file-upload imageTitle="אבא של אמא:"></app-file-upload>
   <!--   <div id="image-container">
     <img
       *ngIf="url !== ''"
@@ -71,7 +69,13 @@
       ngModel
       name="youthName"
     ></app-generic-input>
-    <div id="gender-wrapper">
+    <app-generic-radio-button
+      [isRequired]="true"
+      errorMsg="אנא בחרו מין"
+      name="gender"
+      ngModel
+    ></app-generic-radio-button>
+    <!--     <div id="gender-wrapper">
       <span id="gender-title">מין</span>
       <p id="gender-info">
         בחרו:
@@ -85,7 +89,7 @@
           />
         </span>
       </p>
-    </div>
+    </div> -->
     <app-generic-input
       placeholder="שנה או תאריך מלא"
       [pattern]="datePattern"
